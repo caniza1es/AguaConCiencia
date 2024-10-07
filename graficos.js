@@ -259,7 +259,7 @@ function generarMapaInteractivo() {
 
     sectores.forEach(function(sector) {
         let color = getColor(sector.consumoPromedio);
-        let radioProporcional = getRadio(sector.consumoPromedio, 500); // Ajusta '500' según necesites
+        let radioProporcional = getRadio(sector.consumoPromedio, 200); // Ajusta '500' según necesites
 
         // Crear el círculo
         L.circle(sector.coordenadas, {
