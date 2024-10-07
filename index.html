@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Optimización del Consumo de Agua</title>
+    <!-- Fuente de Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <!-- AOS CSS (Animaciones al hacer scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Font Awesome (Íconos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Tu archivo CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <nav>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Formulario</a></li>
+            <li><a href="graficos.html"><i class="fas fa-chart-bar"></i> Gráficas y Mapa</a></li>
+            <li><a href="sugerencias.html"><i class="fas fa-lightbulb"></i> Sugerencias de Usuarios</a></li>
+        </ul>
+    </nav>
+
+    <h1 data-aos="fade-down">Formulario de Consumo de Agua</h1>
+
+    <form id="consumoForm" data-aos="fade-up">
+        <!-- Preguntas demográficas -->
+        <label for="sector">Seleccione su sector en La Candelaria:</label>
+        <select id="sector" name="sector" required>
+            <option value="">Seleccione...</option>
+            <option value="La Catedral">La Catedral</option>
+            <option value="La Concordia">La Concordia</option>
+            <option value="Las Aguas">Las Aguas</option>
+            <option value="Belén">Belén</option>
+            <option value="Egipto">Egipto</option>
+            <option value="Santa Bárbara">Santa Bárbara</option>
+            <option value="Centro Administrativo">Centro Administrativo</option>
+            <option value="Santa Inés">Santa Inés</option>
+        </select>
+
+        <label for="tamanoHogar">Tamaño del hogar (1-4 personas):</label>
+        <select id="tamanoHogar" name="tamanoHogar" required>
+            <option value="">Seleccione...</option>
+            <option value="1">1 persona</option>
+            <option value="2">2 personas</option>
+            <option value="3">3 personas</option>
+            <option value="4">4 personas</option>
+        </select>
+
+        <!-- Consumo de agua -->
+        <label for="consumoDiario">Consumo diario por familia en litros:</label>
+        <input type="number" id="consumoDiario" name="consumoDiario" min="0" required>
+
+        <!-- Sección de preguntas adicionales -->
+        <div id="preguntasAdicionales" style="display: none;">
+            <h3>Preguntas adicionales</h3>
+
+            <label for="fugas">¿Ha detectado fugas en su hogar?</label>
+            <select id="fugas" name="fugas" required>
+                <option value="">Seleccione...</option>
+                <option value="Sí">Sí</option>
+                <option value="No">No</option>
+                <option value="No estoy seguro">No estoy seguro</option>
+            </select>
+
+            <label for="dispositivosAhorro">¿Utiliza dispositivos de ahorro de agua (ej. aireadores, inodoros de bajo consumo)?</label>
+            <select id="dispositivosAhorro" name="dispositivosAhorro" required>
+                <option value="">Seleccione...</option>
+                <option value="Sí">Sí</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="tiempoDucha">¿Cuánto tiempo dura usualmente sus duchas?</label>
+            <select id="tiempoDucha" name="tiempoDucha" required>
+                <option value="">Seleccione...</option>
+                <option value="Menos de 5 minutos">Menos de 5 minutos</option>
+                <option value="5-10 minutos">5-10 minutos</option>
+                <option value="Más de 10 minutos">Más de 10 minutos</option>
+            </select>
+
+            <label for="electrodomesticos">¿Utiliza electrodomésticos eficientes (ej. lavadora, lavavajillas)?</label>
+            <select id="electrodomesticos" name="electrodomesticos" required>
+                <option value="">Seleccione...</option>
+                <option value="Sí">Sí</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="tieneJardin">¿Tiene jardín en su hogar?</label>
+            <select id="tieneJardin" name="tieneJardin" required>
+                <option value="">Seleccione...</option>
+                <option value="Sí">Sí</option>
+                <option value="No">No</option>
+            </select>
+
+            <!-- Preguntas sobre el jardín -->
+            <div id="seccionJardin" style="display: none;">
+                <label for="riegoFrecuencia">¿Con qué frecuencia riega su jardín?</label>
+                <select id="riegoFrecuencia" name="riegoFrecuencia">
+                    <option value="">Seleccione...</option>
+                    <option value="Diario">Diario</option>
+                    <option value="Varias veces a la semana">Varias veces a la semana</option>
+                    <option value="Semanal">Semanal</option>
+                </select>
+
+                <label for="tipoPlantas">¿Qué tipo de plantas tiene en su jardín?</label>
+                <select id="tipoPlantas" name="tipoPlantas">
+                    <option value="">Seleccione...</option>
+                    <option value="Plantas de alto consumo de agua">Plantas de alto consumo de agua</option>
+                    <option value="Plantas nativas o xerófilas">Plantas nativas o xerófilas</option>
+                </select>
+            </div>
+
+            <label for="habitosCocina">¿Suele dejar el grifo abierto mientras lava platos o alimentos?</label>
+            <select id="habitosCocina" name="habitosCocina" required>
+                <option value="">Seleccione...</option>
+                <option value="Sí, siempre">Sí, siempre</option>
+                <option value="A veces">A veces</option>
+                <option value="No, cierro el grifo">No, cierro el grifo</option>
+            </select>
+
+            <label for="recoleccionAgua">¿Recolecta agua de lluvia o reutiliza aguas grises?</label>
+            <select id="recoleccionAgua" name="recoleccionAgua" required>
+                <option value="">Seleccione...</option>
+                <option value="Sí">Sí</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="concienciaAgua">En una escala de 1 a 5, ¿cuál es su nivel de conciencia sobre el uso del agua?</label>
+            <select id="concienciaAgua" name="concienciaAgua" required>
+                <option value="">Seleccione...</option>
+                <option value="1">1 - Muy baja</option>
+                <option value="2">2 - Baja</option>
+                <option value="3">3 - Media</option>
+                <option value="4">4 - Alta</option>
+                <option value="5">5 - Muy alta</option>
+            </select>
+
+            <label for="razonesNoAhorro">Por favor, indique las razones por las que no está tomando medidas para ahorrar agua:</label>
+            <textarea id="razonesNoAhorro" name="razonesNoAhorro" rows="5" required></textarea>
+        </div>
+
+        <!-- Sección para compartir prácticas de ahorro -->
+        <div id="compartirPracticas" style="display: none;">
+            <h3>Comparte tus prácticas de ahorro</h3>
+            <label for="practicasAhorro">Escribe tus prácticas de ahorro y optimización:</label>
+            <textarea id="practicasAhorro" name="practicasAhorro" rows="5" required></textarea>
+        </div>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Tu Nombre o Compañía. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Incluir scripts -->
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- AOS JS (Animaciones al hacer scroll) -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Configuración de Firebase -->
+    <script src="firebase-config.js"></script>
+    <!-- Script Principal -->
+    <script src="script.js"></script>
+</body>
+</html>

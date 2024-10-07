@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sugerencias de Usuarios</title>
+    <!-- Fuente de Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+    <!-- AOS CSS (Animaciones al hacer scroll) -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Font Awesome (Íconos) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Tu archivo CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <nav>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Formulario</a></li>
+            <li><a href="graficos.html"><i class="fas fa-chart-bar"></i> Gráficas y Mapa</a></li>
+            <li><a href="sugerencias.html"><i class="fas fa-lightbulb"></i> Sugerencias de Usuarios</a></li>
+        </ul>
+    </nav>
+
+    <h1 data-aos="fade-down">Sugerencias y Razones de Usuarios</h1>
+
+    <div id="sugerenciasContainer" data-aos="fade-up">
+        <h2>Prácticas de Ahorro de Usuarios con Consumo Óptimo</h2>
+        <ul id="listaSugerencias"></ul>
+
+        <h2>Razones de Usuarios con Consumo No Óptimo</h2>
+        <ul id="listaRazones"></ul>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Tu Nombre o Compañía. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Incluir scripts -->
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <!-- AOS JS (Animaciones al hacer scroll) -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- Configuración de Firebase -->
+    <script src="firebase-config.js"></script>
+    <!-- Script Principal -->
+    <script src="sugerencias.js"></script>
+</body>
+</html>

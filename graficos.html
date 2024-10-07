@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Gráficas y Mapa</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+    <link rel="stylesheet" href="styles.css">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <style>
+        /* Contenedor principal */
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* Barra de Navegación */
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul li a i {
+            margin-right: 5px;
+        }
+
+        /* Título Principal */
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            color: #333;
+        }
+
+        /* Contenedor de Gráficos */
+        .charts-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        /* Cada Gráfico */
+        .chart-wrapper {
+            flex: 1 1 45%;
+            min-width: 300px;
+        }
+
+        .chart-wrapper h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            color: #555;
+        }
+
+        /* Estilo para el Mapa */
+        #map {
+            height: 500px;
+            margin-bottom: 60px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #f4f4f4;
+            font-size: 1em;
+            color: #666;
+        }
+
+        /* Responsividad */
+        @media (max-width: 768px) {
+            .charts-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .chart-wrapper {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <nav>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> Formulario</a></li>
+            <li><a href="graficos.html"><i class="fas fa-chart-bar"></i> Gráficas y Mapa</a></li>
+            <li><a href="sugerencias.html"><i class="fas fa-lightbulb"></i> Sugerencias de Usuarios</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1 data-aos="fade-down">Gráficas y Mapa</h1>
+
+        <!-- Contenedor de Gráficos -->
+        <div class="charts-container">
+            <!-- Gráfico de Consumo Promedio por Persona -->
+            <div class="chart-wrapper" data-aos="fade-up">
+                <h2>Consumo Promedio por Persona (L)</h2>
+                <canvas id="consumoPromedioChart"></canvas>
+            </div>
+
+            <!-- Gráfico de Uso de Dispositivos de Ahorro -->
+            <div class="chart-wrapper" data-aos="fade-up">
+                <h2>Uso de Dispositivos de Ahorro</h2>
+                <canvas id="dispositivosAhorroChart"></canvas>
+            </div>
+
+            <!-- Gráfico de Porcentaje de Hogares con Fugas -->
+            <div class="chart-wrapper" data-aos="fade-up">
+                <h2>Porcentaje de Hogares con Fugas</h2>
+                <canvas id="fugasChart"></canvas>
+            </div>
+
+            <!-- Gráfico de Nivel de Conciencia sobre el Uso del Agua -->
+            <div class="chart-wrapper" data-aos="fade-up">
+                <h2>Nivel de Conciencia sobre el Uso del Agua</h2>
+                <canvas id="concienciaAguaChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Mapa interactivo -->
+        <div id="map" data-aos="fade-up"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Tu Nombre o Compañía. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Incluir scripts -->
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4"></script>
+    <!-- Leaflet JS (para el mapa) -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <!-- AOS JS (Animaciones al hacer scroll) -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <!-- Configuración de Firebase -->
+    <script src="firebase-config.js"></script>
+    <!-- Script Principal -->
+    <script src="graficos.js"></script>
+</body>
+</html>

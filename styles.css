@@ -1,0 +1,222 @@
+/* styles.css */
+
+/* Fuente y estilo base */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+}
+
+/* Barra de Navegación */
+nav {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav li a {
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+nav li a:hover {
+    color: #00bcd4; /* Cian */
+}
+
+/* Encabezados */
+h1, h2, h3 {
+    color: #333;
+    text-align: center;
+    margin-top: 30px;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+/* Formulario */
+form {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #555;
+}
+
+form input[type="number"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+form input[type="number"]:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #00bcd4; /* Cian */
+}
+
+form button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #00bcd4; /* Cian */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button[type="submit"]:hover {
+    background-color: #008c9e; /* Cian más oscuro */
+}
+
+#preguntasAdicionales, #compartirPracticas {
+    margin-top: 20px;
+}
+
+/* Sección del jardín */
+#seccionJardin {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+/* Canvas de las gráficas */
+canvas {
+    max-width: 800px;
+    margin: 40px auto;
+    display: block;
+}
+
+/* Mapa */
+#map {
+    width: 100%;
+    height: 500px;
+    margin: 40px auto;
+    max-width: 800px;
+}
+
+/* Leyenda del mapa */
+.info.legend {
+    background-color: white;
+    padding: 6px 8px;
+    font: 14px 'Roboto', sans-serif;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+
+.info.legend i {
+    width: 18px;
+    height: 18px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+}
+
+/* Sugerencias */
+#sugerenciasContainer {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+#sugerenciasContainer h2 {
+    margin-top: 30px;
+    color: #333;
+}
+
+#sugerenciasContainer ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+#sugerenciasContainer li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* Footer */
+footer {
+    background-color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    color: #777;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    form {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+}
+
+/* Animaciones AOS */
+[data-aos] {
+    opacity: 0;
+    transition-property: opacity, transform;
+}
+
+[data-aos].aos-animate {
+    opacity: 1;
+}
+
+/* SweetAlert estilos personalizados (opcional) */
+.swal2-popup {
+    font-size: 1.2rem !important;
+    font-family: 'Roboto', sans-serif;
+}
