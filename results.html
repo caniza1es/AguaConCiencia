@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>AguaConCiencia - Resultados</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>AguaConCiencia</h1>
+        <nav id="main-nav" class="unauthenticated">
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="login.html" class="nav-link guest-link">Iniciar Sesión</a>
+            <a href="register.html" class="nav-link guest-link">Registrarse</a>
+            <a href="user.html" class="nav-link auth-link">Mi Cuenta</a>
+            <a href="results.html" class="nav-link auth-link">Resultados</a>
+            <a href="integracion.html" class="nav-link auth-link">Integración</a>
+            <a href="#" id="nav-logout" class="nav-link auth-link">Cerrar Sesión</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="results-section">
+            <h2>Tus Resultados Comparativos</h2>
+            <p id="demographic-info"></p>
+            <canvas id="comparisonChart"></canvas>
+
+            <div id="suggestions-section">
+                <h3>¡Sugerencias para ti!</h3>
+                <div id="suggestions-content"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 AguaConCiencia. Todos los derechos reservados.</p>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/results.js"></script>
+</body>
+</html>

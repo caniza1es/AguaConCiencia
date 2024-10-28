@@ -1,0 +1,51 @@
+<!-- user.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AguaConCiencia - Usuario</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>AguaConCiencia</h1>
+
+
+        <nav id="main-nav" class="unauthenticated">
+            <a href="index.html" class="nav-link">Inicio</a>
+            <a href="login.html" class="nav-link guest-link">Iniciar Sesión</a>
+            <a href="register.html" class="nav-link guest-link">Registrarse</a>
+            <a href="user.html" class="nav-link auth-link">Mi Cuenta</a>
+            <a href="results.html" class="nav-link auth-link">Resultados</a>
+            <a href="integracion.html" class="nav-link auth-link">Integración</a>
+            <a href="#" id="nav-logout" class="nav-link auth-link">Cerrar Sesión</a>
+        </nav>
+
+
+
+    </header>
+
+    <main>
+        <section class="user-dashboard">
+            <h2>Bienvenido, <span id="user-email"></span></h2>
+            <p>Aquí podrás medir y administrar tu consumo de agua de manera eficiente.</p>
+
+            <button id="start-form-button" class="btn">Completar Formulario</button>
+
+            <div id="dynamic-form-container" class="form-section" style="display: none;">
+
+            </div>
+            <button id="delete-account-button" class="btn delete-btn">Eliminar Cuenta</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 AguaConCiencia. Todos los derechos reservados.</p>
+    </footer>
+
+    <script type="module" src="js/auth.js"></script>
+    <script type="module" src="js/delete-account.js"></script>
+    <script type="module" src="js/user-form.js"></script>
+</body>
+</html>
