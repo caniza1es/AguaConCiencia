@@ -6,7 +6,7 @@
 }
 
 body {
-    ont-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
     line-height: 1.6;
     background-color: #ECF0F1;
     color: #34495E;
