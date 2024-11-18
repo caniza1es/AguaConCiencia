@@ -17,6 +17,12 @@ body {
     min-height: 100vh;
 }
 
+.results-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
 
 header {
     background-color: #2C3E50;

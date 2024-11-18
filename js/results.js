@@ -11,13 +11,13 @@ import {
 const comparisonChartCanvas = document.getElementById('comparisonChart');
 const demographicInfoParagraph = document.getElementById('demographic-info');
 const sectors = {
-    'Belén': { coords: [4.5965, -74.0750] },
-    'Las Aguas': { coords: [4.6030, -74.0715] },
-    'Santa Bárbara': { coords: [4.6005, -74.0725] },
-    'La Concordia': { coords: [4.5990, -74.0740] },
-    'Egipto': { coords: [4.6020, -74.0770] },
+    'Belén': { coords: [4.5954, -74.0739] },
+    'Las Aguas': { coords: [4.6040, -74.0700] },
+    'Santa Bárbara': { coords: [4.6015, -74.0720] },
+    'La Concordia': { coords: [4.5985, -74.0735] },
+    'Egipto': { coords: [4.6025, -74.0765] },
     'Centro Administrativo': { coords: [4.5980, -74.0760] },
-    'Catedral': { coords: [4.6010, -74.0730] },
+    'Catedral': { coords: [4.6000, -74.0725] },
   };
   
 let currentUser = null;
