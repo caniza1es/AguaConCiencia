@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>AguaConCiencia - Resultados</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
 </head>
 <body>
     <header>
@@ -20,11 +21,15 @@
         </nav>
     </header>
 
+
     <main>
         <section class="results-section">
             <h2>Tus Resultados Comparativos</h2>
             <p id="demographic-info"></p>
             <canvas id="comparisonChart"></canvas>
+
+ 
+            <div id="sector-map" style="height: 500px; margin-top: 40px;"></div>
 
             <div id="suggestions-section">
                 <h3>¡Sugerencias para ti!</h3>
@@ -32,6 +37,7 @@
             </div>
         </section>
     </main>
+
 
     <footer>
         <p>&copy; 2024 AguaConCiencia. Todos los derechos reservados.</p>
@@ -41,5 +47,6 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="module" src="js/auth.js"></script>
     <script type="module" src="js/results.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </body>
 </html>

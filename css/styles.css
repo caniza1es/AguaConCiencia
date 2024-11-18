@@ -452,3 +452,16 @@ main {
         padding: 15px;
     }
 }
+
+/* Agrega en styles.css */
+#sector-map {
+    width: 100%;
+    height: 500px;
+  }
+  
+  @media (max-width: 768px) {
+    #sector-map {
+      height: 300px;
+    }
+  }
+  

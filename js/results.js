@@ -10,7 +10,95 @@ import {
 
 const comparisonChartCanvas = document.getElementById('comparisonChart');
 const demographicInfoParagraph = document.getElementById('demographic-info');
+const sectors = {
+    'Belén': { coords: [4.5965, -74.0750] },
+    'Las Aguas': { coords: [4.6030, -74.0715] },
+    'Santa Bárbara': { coords: [4.6005, -74.0725] },
+    'La Concordia': { coords: [4.5990, -74.0740] },
+    'Egipto': { coords: [4.6020, -74.0770] },
+    'Centro Administrativo': { coords: [4.5980, -74.0760] },
+    'Catedral': { coords: [4.6010, -74.0730] },
+  };
+  
 let currentUser = null;
+
+function generateSectorComparison(allUsersData) {
+    const map = initializeMap();
+  
+
+    const sectorData = {};
+  
+    for (const uid in allUsersData) {
+      const data = allUsersData[uid];
+      const sector = data.sector;
+  
+      if (!sectorData[sector]) {
+        sectorData[sector] = { totalScore: 0, count: 0 };
+      }
+  
+      let userScore = 0;
+  
+      if (data.userType === 'persona') {
+        userScore = data.strategies ? data.strategies.length : 0;
+      } else if (data.userType === 'empresa') {
+        userScore = data.installationScore || 0;
+      }
+  
+      sectorData[sector].totalScore += userScore;
+      sectorData[sector].count += 1;
+    }
+  
+
+    const sectorAverageScore = {};
+    for (const sector in sectorData) {
+      const avgScore = sectorData[sector].totalScore / sectorData[sector].count;
+      sectorAverageScore[sector] = avgScore;
+    }
+  
+
+    const thresholdGood = 5; 
+    const thresholdBad = 2;  
+  
+    for (const sectorName in sectors) {
+      const sector = sectors[sectorName];
+      const avgScore = sectorAverageScore[sectorName] || 0;
+  
+     
+      let color;
+      if (avgScore >= thresholdGood) {
+        color = 'green';
+      } else if (avgScore <= thresholdBad) {
+        color = 'red';
+      } else {
+        color = 'yellow';
+      }
+  
+      // Agregar círculo al mapa
+      L.circle(sector.coords, {
+        color: color,
+        fillColor: color,
+        fillOpacity: 0.5,
+        radius: 150, // Ajusta el radio según tus necesidades
+      })
+        .addTo(map)
+        .bindPopup(`${sectorName}: Promedio ${avgScore.toFixed(2)}`);
+    }
+  }
+  
+
+
+function initializeMap() {
+    const map = L.map('sector-map').setView([4.5981, -74.0758], 15); 
+  
+  
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors',
+    }).addTo(map);
+  
+    return map;
+  }
+  
+
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -70,6 +158,10 @@ async function fetchDemographicData(userData) {
             displayDemographicInfo(userData);
 
             generateChart(userData, demographicData);
+
+
+            generateSectorComparison(allUsersData);
+
         } else {
             console.log("No hay datos de otros usuarios.");
 
